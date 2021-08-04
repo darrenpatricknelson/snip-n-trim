@@ -1,0 +1,323 @@
+/* The below is an importing fonts through CSS */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/*  below is how you declare variables. Instead of declaring them in the body */
+:root {
+  --color-1: #dad7cd; /* lightest shade */
+  --color-2: #a3b18a; /* second lightest shade */
+  --color-3: #588157; /* in the middle */
+  --color-4: #3a5a40; /* second darkest shade */
+  --color-5: #344e41; /* darkest shade */
+  --color-text-black: #000;
+  --color-text-white: #fff;
+
+  /* new */
+  --color-1-1: #2f3240;
+}
+
+body {
+  line-height: 1.5;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--color-2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 1500px;
+  margin: auto;
+  /* border: 1px solid black;  */
+  /* Remember to remove */
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+/* header */
+.header {
+  background-color: var(--color-2);
+  padding: 12px 0;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.header .logo,
+.header .nav {
+  padding: 0 15px;
+}
+
+.header .logo a {
+  font-size: 30px;
+  color: #000;
+  text-transform: capitalize;
+}
+
+.header .nav ul li {
+  display: inline-block;
+  margin-left: 40px;
+}
+
+.header .nav ul li a {
+  display: block;
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #000;
+  padding: 10px 0;
+  transition: all 0.5s ease;
+}
+
+.header .nav ul li a.active,
+.header .nav ul li a:hover {
+  color: var(--color-text-white);
+}
+
+/* navbar button */
+.nav-toggler {
+  height: 34px;
+  width: 44px;
+  background-color: rgba(0, 0, 0, 0.445);
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  display: none;
+  margin-right: 15px;
+}
+
+.nav-toggler:focus {
+  outline: none;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.nav-toggler span {
+  height: 2px;
+  width: 20px;
+  background-color: #fff;
+  display: block;
+  margin: auto;
+  position: relative;
+}
+
+.nav-toggler span::before,
+.nav-toggler span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+
+.nav-toggler span::before {
+  transform: translateY(-6px);
+}
+.nav-toggler span::after {
+  transform: translateY(6px);
+}
+
+/* navbar responsiveness */
+
+@media (max-width: 991px) {
+  .nav-toggler {
+    display: block;
+  }
+  .header .nav {
+    width: 100%;
+    padding: 0;
+    max-height: 0px;
+    overflow: hidden;
+    visibility: hidden;
+    transition: all 0.5s ease;
+  }
+  .header .nav.open {
+    visibility: visible;
+  }
+  .header .nav ul {
+    padding: 12px 15px 0;
+    margin-top: 12px;
+    border-top: 1px solid rgba(0, 0, 0, 0.4);
+  }
+  .header .nav ul li {
+    display: block;
+    margin: 0;
+  }
+}
+
+/* This is the home page. the face of the operation */
+
+.home-page {
+  background-color: lightblue;
+  margin: 10px auto 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home-page_logo {
+  background-color: red;
+  flex-basis: 50%;
+  flex-grow: 1;
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--color-text-white);
+  padding: 20px 10px;
+}
+
+.home-page_logo img {
+  width: clamp(100px, 20vw, 300px);
+  height: clamp(100px, 20vw, 300px);
+}
+
+.home-page_navbar {
+  background-color: violet;
+  flex-grow: 1;
+  flex-basis: 50%;
+}
+
+.home-page_navbar h1 {
+  font-size: clamp(100px, 20vw, 300px);
+}
+
+.home-page_navbar_links li {
+  display: inline-block;
+  margin: 0.3rem 0 0 0.5rem;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  align-items: center;
+  text-transform: capitalize;
+  /* border: 1px solid; */
+}
+
+.home-page_navbar_links a {
+  color: var(--color-text-black);
+}
+
+.home-page_information {
+  background-color: lightcoral;
+  /* margin: 0 0 100px; */
+  padding: 15px 20px;
+}
+
+.home-page_information p {
+  /* font-size: 30px; */
+  /* font-size: clamp(2px, 20vw, 30px); */
+}
+
+/* footer */
+
+.footer {
+  background-color: #34362b;
+  padding: 70px 0;
+}
+
+.footer-col {
+  width: 30%;
+  padding: 0 15px;
+}
+
+.footer-col h4 {
+  position: relative;
+  font-size: 18px;
+  color: #fff;
+  text-transform: capitalize;
+  margin-bottom: 35px;
+  font-weight: 500;
+}
+
+.footer-col h4::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -10px;
+  background-color: #e91e63;
+  height: 2px;
+  box-sizing: border-box;
+  width: 50px;
+}
+
+.footer-col ul li:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+  font-size: 16px;
+  text-transform: capitalize;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 300;
+  color: #bbb;
+  display: block;
+  transition: all 0.3s ease;
+}
+
+.footer-col ul li a:hover {
+  color: #fff;
+  padding-left: 8px;
+}
+
+.footer-col .social-links a {
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  background-color: rgba(255, 255, 255, 0.2);
+  margin: 0 10px 10px 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+
+.footer-col .social-links a:hover {
+  color: #24262b;
+  background-color: #fff;
+}
+
+/* footer responsive */
+@media (max-width: 767px) {
+  .footer-col {
+    width: 25%;
+    margin-bottom: 30px;
+  }
+}
+
+@media (max-width: 574px) {
+  .footer-col {
+    width: 100%;
+  }
+}
+
+/* disposables */
+.looker {
+  border: 1px solid black;
+}
+
+.hide-content {
+  display: none;
+}
+
+.disposables {
+  height: 50vh;
+  background-color: rgba(255, 0, 0, 0.123);
+}

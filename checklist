@@ -1,0 +1,15 @@
+This page is for information you need to remember
+The title is self explanatory
+Create a checklist of things that you want completed and once they have been completed, check them off!
+
+#1 Create checklist page (DONE)
+#2 I want you to design this webpage for all three major screen sizes
+    - Full screen (1024×768 through 1920×1080)
+    - Tablet (360×640 through 414×896)
+    - mobile device (360×640 through 414×896)
+
+    - To successfully do this, we're going to have to @media our code.
+    - Do some research on @media and find out if we can house our entire CSS in an @media section
+    - If we can, then we'll have 3 @media sections for each screen size.
+    - We will only change font sizes in the @media sections while the rest of the code stays the same 
+    - Goodluck!
