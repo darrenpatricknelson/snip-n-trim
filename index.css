@@ -166,16 +166,24 @@ a {
 }
 
 /* This is the home page. the face of the operation */
+@media (max-width: 700px) {
+  .home-page {
+    /* background-color: lightblue; */
+    margin: 10px auto 30px;
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .home-page {
-  background-color: lightblue;
+  /* background-color: lightblue; */
   margin: 10px auto 30px;
   display: flex;
   flex-wrap: wrap;
 }
 
 .home-page_logo {
-  background-color: red;
+  /* background-color: red; */
   flex-basis: 50%;
   flex-grow: 1;
   text-align: center;
@@ -190,9 +198,12 @@ a {
 }
 
 .home-page_navbar {
-  background-color: violet;
-  flex-grow: 1;
-  flex-basis: 50%;
+  /* background-color: violet; */
+  width: 100%;
+  text-align: center;
+}
+.home-page_navbar ul {
+  display: inline-block;
 }
 
 .home-page_navbar h1 {
@@ -209,14 +220,20 @@ a {
   /* border: 1px solid; */
 }
 
+.home-page_navbar_links ul li a:hover {
+  color: var(--color-text-white);
+}
+
 .home-page_navbar_links a {
   color: var(--color-text-black);
 }
 
 .home-page_information {
-  background-color: lightcoral;
+  /* background-color: lightcoral; */
   /* margin: 0 0 100px; */
   padding: 15px 20px;
+  flex-grow: 1;
+  flex-basis: 50%;
 }
 
 .home-page_information p {
