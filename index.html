@@ -1,25 +1,4 @@
 <!DOCTYPE html>
-<!--
-  /$$$$$$                                 /$$                     /$$       /$$                                      
- /$$__  $$                               | $$                    | $$      | $$                                      
-| $$  \__/  /$$$$$$  /$$$$$$   /$$$$$$  /$$$$$$    /$$$$$$   /$$$$$$$      | $$$$$$$  /$$   /$$                      
-| $$       /$$__  $$/$$__  $$ |____  $$|_  $$_/   /$$__  $$ /$$__  $$      | $$__  $$| $$  | $$                      
-| $$      | $$  \__/ $$$$$$$$  /$$$$$$$  | $$    | $$$$$$$$| $$  | $$      | $$  \ $$| $$  | $$                      
-| $$    $$| $$     | $$_____/ /$$__  $$  | $$ /$$| $$_____/| $$  | $$      | $$  | $$| $$  | $$                      
-|  $$$$$$/| $$     |  $$$$$$$|  $$$$$$$  |  $$$$/|  $$$$$$$|  $$$$$$$      | $$$$$$$/|  $$$$$$$                      
- \______/ |__/      \_______/ \_______/   \___/   \_______/ \_______/      |_______/  \____  $$                      
-                                                                                      /$$  | $$                      
-                                                                                     |  $$$$$$/                      
-                                                                                      \______/                       
- /$$$$$$$                                                       /$$   /$$           /$$                              
-| $$__  $$                                                     | $$$ | $$          | $$                              
-| $$  \ $$ /$$$$$$   /$$$$$$  /$$$$$$  /$$$$$$  /$$$$$$$       | $$$$| $$  /$$$$$$ | $$  /$$$$$$$  /$$$$$$  /$$$$$$$ 
-| $$  | $$|____  $$ /$$__  $$/$$__  $$/$$__  $$| $$__  $$      | $$ $$ $$ /$$__  $$| $$ /$$_____/ /$$__  $$| $$__  $$
-| $$  | $$ /$$$$$$$| $$  \__/ $$  \__/ $$$$$$$$| $$  \ $$      | $$  $$$$| $$$$$$$$| $$|  $$$$$$ | $$  \ $$| $$  \ $$
-| $$  | $$/$$__  $$| $$     | $$     | $$_____/| $$  | $$      | $$\  $$$| $$_____/| $$ \____  $$| $$  | $$| $$  | $$
-| $$$$$$$/  $$$$$$$| $$     | $$     |  $$$$$$$| $$  | $$      | $$ \  $$|  $$$$$$$| $$ /$$$$$$$/|  $$$$$$/| $$  | $$
-|_______/ \_______/|__/     |__/      \_______/|__/  |__/      |__/  \__/ \_______/|__/|_______/  \______/ |__/  |__/
--->
 <html lang="en">
   <head>
     <title>SNIP 'N TRIM</title>
@@ -29,6 +8,7 @@
 
     <!-- css link -->
     <link rel="stylesheet" href="index.css" />
+
 
     <!-- font awesome -->
     <script
@@ -48,19 +28,31 @@
           </button>
           <nav class="nav">
             <ul>
-              <li><a href="#" class="active">home</a></li>
-              <li><a href="#">about</a></li>
-              <li><a href="#">services</a></li>
-              <li><a href="#">portfolio</a></li>
-              <li><a href="#">testimonials</a></li>
-              <li><a href="#">contact</a></li>
+              <li><a href="#" class="active" id="home-link">home</a></li>
+              <li><a href="#" id="about-us-link">about us</a></li>
+              <li><a href="#" id="services-link">services</a></li>
+              <li><a href="#" id="portfolio-link">portfolio</a></li>
+              <li><a href="#" id="testimonial-link">testimonials</a></li>
+              <li><a href="#" id="contact-link">contact</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
+    
+    <!-- This is the navbar for mobile -->
+    <!-- <div class="mobile_navbar">
+            <ul class="mobile_navbar_links">
+              <li><a href="#" class="active" id="mobile__home-link">home</a></li>
+              <li><a href="#" id="mobile__about-us-link">about us</a></li>
+              <li><a href="#" id="mobile__services-link">services</a> </li>
+              <li><a href="#" id="mobile__portfolio-link">portfolio</a> </li>
+              <li><a href="#" id="mobile__testimonial-link">testimonials</a> </li>
+              <li><a href="#" id="mobile__contact-link">contact</a> </li>
+            </ul>
+          </div> -->
 
-    <section class="container home-page">
+    <section class="container home-page " id="home">
         <div class="home-page_logo">
           
           <img src="images/company-name.png" alt="company-logo">
@@ -83,10 +75,10 @@
               <li>- Rubble removal</li>
             </ul>
             <br> 
-            <p> Our skills + your vision, SIMPLY PERFECT.</p>
+            <h3> Our skills + your vision, SIMPLY PERFECT.</h3>
           </p>
         </div>
-        <div class="home-page_navbar ">
+        <!-- <div class="home-page_navbar ">
             <ul class="home-page_navbar_links">
               <li><a href="#">about</a></li>
               <li><a href="#">services</a> </li>
@@ -94,7 +86,41 @@
               <li><a href="#">testimonials</a> </li>
               <li><a href="#">contact</a> </li>
             </ul>
-          </div>
+          </div> -->
+    </section>
+
+    <section class="container about_us-page hide-content" id="about-us">
+        <div class="about_us-question-set">
+          <p>"Where are you located?"</p>
+          <p>"What are your hours?"</p>
+          <p>"Can you tell me more about your business?"
+          </p>
+          <p>"What services do you offer?"</p>
+        </div>
+    </section>
+
+    <section class="container services-page hide-content" id="services">
+        <div class="...">
+          <p>"Add information about services here"</p>
+        </div>
+    </section>
+
+    <section class="container portfolio-page hide-content" id="portfolio">
+        <div class="...">
+          <p>"Add information about portfolio"</p>
+        </div>
+    </section>
+
+    <section class="container testimonials-page hide-content" id="testimonials">
+        <div class="...">
+          <p>"Add information about testimonials"</p>
+        </div>
+    </section>
+
+    <section class="container contact-page hide-content" id="contact">
+        <div class="...">
+          <p>"Add information about contact"</p>
+        </div>
     </section>
 
     <footer class="footer">

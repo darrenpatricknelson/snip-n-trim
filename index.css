@@ -30,7 +30,7 @@ body {
 .container {
   max-width: 1500px;
   margin: auto;
-  /* border: 1px solid black;  */
+  border: 1px solid black;
   /* Remember to remove */
 }
 
@@ -166,12 +166,30 @@ a {
 }
 
 /* This is the home page. the face of the operation */
-@media (max-width: 700px) {
+@media (min-width: 751px) {
+  .home-page_logo img {
+    width: clamp(100px, 20vw, 300px);
+    height: clamp(100px, 20vw, 300px);
+  }
+}
+@media (max-width: 750px) {
+  .home-page_logo img {
+    width: 250px;
+    height: 250px;
+  }
   .home-page {
-    /* background-color: lightblue; */
     margin: 10px auto 30px;
     display: flex;
     flex-direction: column;
+  }
+  .home-page_information p {
+    text-align: center;
+  }
+  .home-page_information h3 {
+    text-align: center;
+  }
+  .home-page_information li {
+    padding-left: 40%;
   }
 }
 
@@ -192,25 +210,25 @@ a {
   padding: 20px 10px;
 }
 
-.home-page_logo img {
+/* .home-page_logo img {
   width: clamp(100px, 20vw, 300px);
   height: clamp(100px, 20vw, 300px);
-}
+} */
 
-.home-page_navbar {
+.mobile_navbar {
   /* background-color: violet; */
   width: 100%;
   text-align: center;
 }
-.home-page_navbar ul {
+.mobile_navbar ul {
   display: inline-block;
 }
 
-.home-page_navbar h1 {
+.mobile_navbar h1 {
   font-size: clamp(100px, 20vw, 300px);
 }
 
-.home-page_navbar_links li {
+.mobile_navbar_links li {
   display: inline-block;
   margin: 0.3rem 0 0 0.5rem;
   padding: 0.5rem 1rem;
@@ -220,11 +238,12 @@ a {
   /* border: 1px solid; */
 }
 
-.home-page_navbar_links ul li a:hover {
+.mobile_navbar_links a.active,
+.mobile_navbar_links a:hover {
   color: var(--color-text-white);
 }
 
-.home-page_navbar_links a {
+.mobile_navbar_links a {
   color: var(--color-text-black);
 }
 
@@ -236,9 +255,39 @@ a {
   flex-basis: 50%;
 }
 
-.home-page_information p {
-  /* font-size: 30px; */
-  /* font-size: clamp(2px, 20vw, 30px); */
+/* .home-page_information p {
+  font-size: 30px;
+  font-size: clamp(2px, 20vw, 30px);
+} */
+
+/* About us page */
+.about_us-page {
+  margin: 20px 0;
+  padding: 20px 30px;
+}
+
+/* Services page */
+.services-page {
+  margin: 20px 0;
+  padding: 20px 30px;
+}
+
+/* portfolio page */
+.portfolio-page {
+  margin: 20px 0;
+  padding: 20px 30px;
+}
+
+/* testimonials page */
+.testimonials-page {
+  margin: 20px 0;
+  padding: 20px 30px;
+}
+
+/* contact page */
+.contact-page {
+  margin: 20px 0;
+  padding: 20px 30px;
 }
 
 /* footer */
