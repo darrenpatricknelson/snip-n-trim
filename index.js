@@ -46,6 +46,8 @@ document.addEventListener("DOMContentLoaded", () => {
     portfolioPageActive.classList.remove("active");
     testimonialPageActive.classList.remove("active");
     contactPageActive.classList.remove("active");
+
+    navToggle();
   });
 
   // navbar about us link javascript
@@ -65,6 +67,8 @@ document.addEventListener("DOMContentLoaded", () => {
     portfolioPageActive.classList.remove("active");
     testimonialPageActive.classList.remove("active");
     contactPageActive.classList.remove("active");
+
+    navToggle();
   });
 
   // navbar services link javascript
@@ -84,6 +88,8 @@ document.addEventListener("DOMContentLoaded", () => {
     portfolioPageActive.classList.remove("active");
     testimonialPageActive.classList.remove("active");
     contactPageActive.classList.remove("active");
+
+    navToggle();
   });
 
   // navbar portfolio link javascript
@@ -103,6 +109,8 @@ document.addEventListener("DOMContentLoaded", () => {
     portfolioPageActive.classList.add("active");
     testimonialPageActive.classList.remove("active");
     contactPageActive.classList.remove("active");
+
+    navToggle();
   });
 
   // navbar testimonials link javascript
@@ -122,6 +130,8 @@ document.addEventListener("DOMContentLoaded", () => {
     portfolioPageActive.classList.remove("active");
     testimonialPageActive.classList.add("active");
     contactPageActive.classList.remove("active");
+
+    navToggle();
   });
 
   // navbar contact link javascript
@@ -141,5 +151,7 @@ document.addEventListener("DOMContentLoaded", () => {
     portfolioPageActive.classList.remove("active");
     testimonialPageActive.classList.remove("active");
     contactPageActive.classList.add("active");
+
+    navToggle();
   });
 });
