@@ -146,7 +146,7 @@ checked.addEventListener("click", (e) => {
 
   setTimeout(() => {
     successMessage.innerText = "";
-  }, 3000);
+  }, 10000);
 });
 
 exit.addEventListener("click", (e) => {
