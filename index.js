@@ -143,6 +143,10 @@ checked.addEventListener("click", (e) => {
     presentation.classList.add("looker");
     confirmed.classList.add("hide-content");
   }, 2001);
+
+  setTimeout(() => {
+    successMessage.innerText = "";
+  }, 3000);
 });
 
 exit.addEventListener("click", (e) => {
