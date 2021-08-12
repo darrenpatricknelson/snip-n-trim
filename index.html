@@ -17,6 +17,40 @@
     ></script>
   </head>
   <body>
+    
+    <div class="overlay hide-content" id="robot-check-form">
+
+      <div class="robot-check">
+        <a href="#" class="exit" id="exit">X</a>
+        <h1>Verification</h1>
+        <p>Please confirm you're human</p>
+
+        <div class="robot-check-click" id="robot-check-click">
+
+            <a href="#" class="confirmed" id="checked">
+
+          <div class="recaptcha-check-presentation looker" id="presentation-box">
+
+              <div class="recaptcha-check-loading hide-content" id="check-loading">
+              </div>
+              <div class="recaptcha-check-confirm hide-content" id="check-confirmed">
+                <i class="fas fa-check fa-2x" style="color: #4ec002;"></i>
+              </div>
+
+          </div>
+
+            </a>
+
+          <p>I'm not a robot</p>
+          <div class="recaptcha">
+          <img src="images/reCAPTCHA.png" alt="reCAPTCHA" style="width: 80px; height: 80px;">
+          <p>Privacy * Terms</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
     <header class="header">
       <div class="container">
         <div class="row align-items-center justify-content-between">
@@ -28,31 +62,19 @@
           </button>
           <nav class="nav">
             <ul>
-              <li><a href="#" class="active" id="home-link">home</a></li>
-              <li><a href="#" id="about-us-link">about us</a></li>
-              <li><a href="#" id="services-link">services</a></li>
-              <li><a href="#" id="portfolio-link">portfolio</a></li>
-              <li><a href="#" id="testimonial-link">testimonials</a></li>
-              <li><a href="#" id="contact-link">contact</a></li>
+              <li><a data-page-link data-target="home" href="#" class="active">home</a></li>
+              <li><a data-page-link data-target="about-us" href="#" >about us</a></li>
+              <li><a data-page-link data-target="services" href="#" >services</a></li>
+              <li><a data-page-link data-target="portfolio" href="#" >portfolio</a></li>
+              <li><a data-page-link data-target="testimonials" href="#" >testimonials</a></li>
+              <li><a data-page-link data-target="contact" href="#" >contact</a></li>
             </ul>
           </nav>
         </div>
       </div>
     </header>
-    
-    <!-- This is the navbar for mobile -->
-    <!-- <div class="mobile_navbar">
-            <ul class="mobile_navbar_links">
-              <li><a href="#" class="active" id="mobile__home-link">home</a></li>
-              <li><a href="#" id="mobile__about-us-link">about us</a></li>
-              <li><a href="#" id="mobile__services-link">services</a> </li>
-              <li><a href="#" id="mobile__portfolio-link">portfolio</a> </li>
-              <li><a href="#" id="mobile__testimonial-link">testimonials</a> </li>
-              <li><a href="#" id="mobile__contact-link">contact</a> </li>
-            </ul>
-          </div> -->
 
-    <section class="container home-page " id="home">
+    <section data-pages class="container home-page " id="home">
         <div class="home-page_logo">
           
           <img src="images/company-name.png" alt="company-logo">
@@ -89,7 +111,7 @@
           </div> -->
     </section>
 
-    <section class="container about_us-page hide-content" id="about-us">
+    <section data-pages class="container about_us-page hide-content" id="about-us">
         <div class="about_us-question-set">
           <p>"Where are you located?"</p>
           <p>"What are your hours?"</p>
@@ -99,28 +121,62 @@
         </div>
     </section>
 
-    <section class="container services-page hide-content" id="services">
+    <section data-pages class="container services-page hide-content" id="services">
         <div class="...">
           <p>"Add information about services here"</p>
         </div>
     </section>
 
-    <section class="container portfolio-page hide-content" id="portfolio">
+    <section data-pages class="container portfolio-page hide-content" id="portfolio">
         <div class="...">
           <p>"Add information about portfolio"</p>
         </div>
     </section>
 
-    <section class="container testimonials-page hide-content" id="testimonials">
+    <section data-pages class="container testimonials-page hide-content" id="testimonials">
         <div class="...">
           <p>"Add information about testimonials"</p>
         </div>
     </section>
 
-    <section class="container contact-page hide-content" id="contact">
-        <div class="...">
-          <p>"Add information about contact"</p>
-        </div>
+    <section data-pages class="container contact-page hide-content" id="contact">
+      <div class="contact_decoration">
+        <p>We appreciate all of you.</p>
+        <p>If you'd like to make use of our services, please feel free to fill out the form with all your details and we will make sure to contact you.</p>
+        <p>Alternatively, you can contact us through the follow platforms:</p>
+        <br>
+        <div class="social-links">
+              <a href="https://www.facebook.com/snipntrim.cpt" target="_blank">
+                <i class="fab fa-facebook-f"></i> : Check out our facebook profile 
+              </a>
+              <br>
+              <a href="https://www.instagram.com/snipntrim.cpt/" target="_blank">
+                <i class="fab fa-instagram"></i> : Check out our facebook profile 
+              </a>
+              <br>
+              <a href="tel:+27 81 366 5898">
+                <i class="fab fa-whatsapp"></i> : Send us a message on whastapp
+              </a>
+              <br>
+              <a href="mailto:snipntrim.cpt@gmail.com">
+                <i class="fas fa-envelope"></i> : Send us an email
+              </a>
+            </div>
+      </div>
+      <div class="contact_form">
+        <form id="form">
+          <input type="text" class="input" placeholder="Name and Surname" id="form_name"><br>
+          <div class="error_message" id="error_name"></div>
+          <input type="text" class="input" placeholder="Email address" id="form_email"><br>
+          <div class="error_message" id="error_email"></div>
+          <input type="text" class="input" placeholder="Phone number" id="form_phone" maxlength="10"><br>
+          <div class="error_message" id="error_phone"></div>
+          <textarea class="input input__message" placeholder="Type your message here..." id="form_message"></textarea>
+          <div class="success_message" id="thankYou"></div>
+          <!-- <input class="contact__submit" type="submit" value="Submit" id="submit"> -->
+          <button class="contact__submit" type="submit">submit</button>
+        </form>
+      </div>
     </section>
 
     <footer class="footer">
@@ -144,14 +200,18 @@
           <div class="footer-col">
             <h4>follow us</h4>
             <div class="social-links">
-              <a href="https://www.facebook.com/snipntrim.cpt" target="_blank"
-                ><i class="fab fa-facebook-f"></i
-              ></a>
-              <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
-              <a href="https://www.instagram.com/snipntrim.cpt/" target="_blank"
-                ><i class="fab fa-instagram"></i
-              ></a>
-              <!-- <a href="#"><i class="fab fa-linkedin-in"></i></a> -->
+              <a href="https://www.facebook.com/snipntrim.cpt" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="tel:+27 81 366 5898">
+                <i class="fab fa-whatsapp"></i>
+              </a>
+              <a href="https://www.instagram.com/snipntrim.cpt/" target="_blank">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="mailto:snipntrim.cpt@gmail.com">
+                <i class="fas fa-envelope"></i>
+              </a>
             </div>
           </div>
         </div>
@@ -159,5 +219,6 @@
     </footer>
 
     <script src="index.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
   </body>
 </html>

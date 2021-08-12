@@ -1,35 +1,14 @@
 /* The below is an importing fonts through CSS */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-/* lightest shade */
-/* second lightest shade */
-/* in the middle */
-/* second darkest shade */
-/* darkest shade */
-/* new */
-body {
-  line-height: 1.5;
-  font-family: "Poppins", sans-serif;
-  background-color: #a3b18a;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-ul {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
+@import "abstracts/colors";
+@import "partials/base";
 
 /*  below is how you declare variables. Instead of declaring them in the body */
+
 .container {
   max-width: 1500px;
   margin: auto;
+  // border: 1px solid black;
   /* Remember to remove */
 }
 
@@ -48,7 +27,7 @@ a {
 
 /* header */
 .header {
-  background-color: #a3b18a;
+  background-color: $color-2;
   padding: 12px 0;
   line-height: 1.5;
   font-weight: 600;
@@ -81,7 +60,7 @@ a {
 
 .header .nav ul li a.active,
 .header .nav ul li a:hover {
-  color: #fff;
+  color: $color-text-white;
 }
 
 .header .nav ul li a:hover {
@@ -128,7 +107,6 @@ a {
 .nav-toggler span::before {
   transform: translateY(-6px);
 }
-
 .nav-toggler span::after {
   transform: translateY(6px);
 }
@@ -144,7 +122,7 @@ a {
   flex-grow: 1;
   text-align: center;
   text-transform: capitalize;
-  color: #fff;
+  color: $color-text-white;
   padding: 20px 10px;
 }
 
@@ -180,6 +158,7 @@ a {
 
 /* contact page */
 .contact-page {
+  // background-color: violet;
   margin: 20px auto;
   padding: 20px 30px;
   display: flex;
@@ -187,21 +166,29 @@ a {
   justify-content: center;
 }
 
+// the div to the left
+
 .contact_decoration {
+  // background-color: red;
+  // border: 1px solid;
   margin-right: 10px;
   padding: 20px;
   line-height: 1.8;
 }
 
 .contact_decoration a {
-  color: #3a3a3a;
+  color: $color-text-links;
 }
 
 .contact_decoration a:hover {
-  color: #fff;
+  color: $color-text-white;
 }
 
+// the div to the right containing the actual form
+
 .contact_form {
+  // background-color: blue;
+  // border: 1px solid;
   margin-left: 10px;
   padding: 20px;
 }
@@ -226,11 +213,9 @@ a {
   padding: 10px 0 0 10px;
   /* display: grid; */
 }
-
 .contact__links {
   font-weight: 500;
 }
-
 .current {
   position: relative;
   border: 1px solid black;
@@ -246,45 +231,40 @@ a {
   padding: 10px;
   font-size: 14px;
 }
-
 .input {
   margin: 6px;
   border: none;
   padding: 10px;
   width: 90%;
+  // background-color: var(--color-primary-dark);
   outline: none;
   box-sizing: border-box;
   resize: vertical;
   border-radius: 10%;
 }
-
 .input:active {
   border: 0.5px solid black;
 }
-
 .input:hover {
   border: 0.5px solid black;
 }
-
 .input__message {
   height: 100px;
 }
 
 .contact__submit {
-  background-color: #a3b18a;
+  background-color: $color-2;
   padding: 8px 25px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   float: right;
   margin-right: 40px;
-  color: #0000005e;
+  color: $color-button;
 }
-
 .contact__submit:hover {
-  color: #000000;
+  color: $color-button-dark;
 }
-
 .contact__submit:active {
   transform: scale(0.9);
 }
@@ -298,19 +278,21 @@ a {
   padding-top: 30%;
 }
 
+// contact page error/success messages
+
 .error_message {
-  color: #ff0000;
+  color: $color-warning;
   font-size: 0.8rem;
   padding-left: 10px;
 }
-
 .success_message {
-  color: #000000;
+  color: $color-success;
   font-size: 0.8rem;
   padding-left: 10px;
   padding-bottom: 10px;
 }
 
+// overlay section
 .overlay {
   background-color: rgba(0, 0, 0, 0.671);
   position: absolute;
@@ -367,13 +349,13 @@ a {
   left: 0;
   right: 0;
   bottom: 0;
+  // z-index: 1;
   border: 6px solid #f3f3f3;
   border-radius: 50%;
   border-top: 6px solid #208bd3;
   width: 30px;
   height: 30px;
-  -webkit-animation: spin 0.8s linear infinite;
-  /* Safari */
+  -webkit-animation: spin 0.8s linear infinite; /* Safari */
   animation: spin 0.8s linear infinite;
 }
 
@@ -386,6 +368,7 @@ a {
     -webkit-transform: rotate(360deg);
   }
 }
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -394,7 +377,9 @@ a {
     transform: rotate(360deg);
   }
 }
+
 .recaptcha-check-confirm {
+  // background-color: lightblue;
   position: absolute;
   top: 0;
   left: 0;
@@ -407,6 +392,22 @@ a {
   justify-content: center;
   align-items: center;
 }
+
+.confirmed-icon {
+}
+
+// .recaptcha-check {
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   right: 0;
+//   bottom: 0;
+//   width: 30px;
+//   height: 30px;
+//   margin-right: 10px;
+//   // z-index: 3;
+//   // display: none;
+// }
 
 .exit {
   color: #000;
@@ -499,100 +500,4 @@ a {
   background-color: rgba(255, 0, 0, 0.123);
 }
 
-/* navbar responsiveness */
-@media (max-width: 1000px) {
-  .nav-toggler {
-    display: block;
-  }
-
-  .header .nav {
-    width: 100%;
-    padding: 0;
-    max-height: 0px;
-    overflow: hidden;
-    visibility: hidden;
-    transition: all 0.5s ease;
-  }
-
-  .header .nav.open {
-    visibility: visible;
-  }
-
-  .header .nav ul {
-    padding: 12px 15px 0;
-    margin-top: 12px;
-    border-top: 1px solid rgba(0, 0, 0, 0.4);
-  }
-
-  .header .nav ul li {
-    display: block;
-    margin: 0;
-  }
-
-  .contact_decoration {
-    margin-bottom: 20px;
-  }
-}
-/* This is the home page. the face of the operation */
-@media (min-width: 751px) {
-  .home-page_logo img {
-    width: clamp(100px, 20vw, 300px);
-    height: clamp(100px, 20vw, 300px);
-  }
-}
-@media (max-width: 750px) {
-  .home-page_logo img {
-    width: 250px;
-    height: 250px;
-  }
-
-  .home-page {
-    margin: 10px auto 30px;
-    display: flex;
-    flex-direction: column;
-  }
-
-  .home-page_information p {
-    text-align: center;
-  }
-
-  .home-page_information h3 {
-    text-align: center;
-  }
-
-  .home-page_information li {
-    padding-left: 40%;
-  }
-
-  .header .nav ul li a:hover {
-    padding-left: 10px;
-  }
-}
-/* footer responsive */
-@media (max-width: 767px) {
-  .footer-col {
-    width: 25%;
-    margin-bottom: 30px;
-  }
-}
-@media (max-width: 574px) {
-  .footer-col {
-    width: 100%;
-  }
-}
-@media (min-width: 1600px) {
-  .header {
-    height: 10vh;
-  }
-
-  section {
-    height: 60vh;
-  }
-
-  .footer {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 20vh;
-  }
-}
+@import "partials/mediaqueries";
