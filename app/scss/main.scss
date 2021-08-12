@@ -295,7 +295,7 @@
 // overlay section
 .overlay {
   background-color: rgba(0, 0, 0, 0.671);
-  position: absolute;
+  position: fixed;
   width: 100%;
   height: 100%;
   z-index: 1;
@@ -392,22 +392,6 @@
   justify-content: center;
   align-items: center;
 }
-
-.confirmed-icon {
-}
-
-// .recaptcha-check {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   right: 0;
-//   bottom: 0;
-//   width: 30px;
-//   height: 30px;
-//   margin-right: 10px;
-//   // z-index: 3;
-//   // display: none;
-// }
 
 .exit {
   color: #000;
