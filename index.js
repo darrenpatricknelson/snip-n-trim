@@ -117,9 +117,6 @@ checked.addEventListener("click", (e) => {
   loading.classList.remove("hide-content");
   setTimeout(() => {
     loading.classList.add("hide-content");
-  }, 1000);
-
-  setTimeout(() => {
     confirmed.classList.remove("hide-content");
   }, 1000);
 
@@ -142,6 +139,7 @@ checked.addEventListener("click", (e) => {
   setTimeout(() => {
     presentation.classList.add("looker");
     confirmed.classList.add("hide-content");
+    message4 = [];
   }, 2001);
 
   setTimeout(() => {
