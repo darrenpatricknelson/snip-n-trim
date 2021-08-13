@@ -58,16 +58,17 @@ var phoneError1 = /^\d{11}$/;
 var phoneError2 = /^\d{12}$/;
 
 form.addEventListener("submit", (e) => {
-  let message1 = [];
-  let message2 = [];
+  e.preventDefault();
+  let message1 = null;
+  let message2 = null;
   let message3 = null;
 
   if (theirName.value === "" || theirName.value == null) {
-    message1.push("* Name is required");
+    message1 = "* Name is required";
   }
 
   if (!email.value.match(validRegex)) {
-    message2.push("* Valid email is required");
+    message2 = "* Valid email is required";
   }
 
   if (
@@ -79,31 +80,25 @@ form.addEventListener("submit", (e) => {
     message3 = "* Invalid phone number";
   }
 
-  if (message1.length > 0) {
-    e.preventDefault();
+  if (message1) {
     errorElement_name.innerText = message1;
   } else {
-    e.preventDefault();
     errorElement_name.innerText = "";
   }
 
-  if (message2.length > 0) {
-    e.preventDefault();
+  if (message2) {
     errorElement_email.innerText = message2;
   } else {
-    e.preventDefault();
     errorElement_email.innerText = "";
   }
 
   if (message3) {
-    e.preventDefault();
     errorElement_phone.innerText = message3;
   } else {
-    e.preventDefault();
     errorElement_phone.innerText = "";
   }
 
-  if (message1.length === 0 && message2.length === 0 && message3.length === 0) {
+  if (!message1 && !message2 && !message3) {
     robotCheckForm.classList.remove("hide-content");
   }
 });
@@ -117,7 +112,7 @@ const confirmed = document.getElementById("check-confirmed");
 const exit = document.getElementById("exit");
 const successMessage = document.getElementById("thankYou");
 
-let message4 = [];
+let message4 = null;
 
 checked.addEventListener("click", (e) => {
   e.preventDefault();
@@ -134,10 +129,9 @@ checked.addEventListener("click", (e) => {
     email.value = "";
     phone.value = "";
     message.value = "";
-    message4.push("Thank you for your enquiry!");
+    message4 = "Thank you for your enquiry!";
 
-    if (message4.length > 0) {
-      e.preventDefault();
+    if (message4) {
       successMessage.innerText = message4;
     } else {
       successMessage.innerText = "";
@@ -147,7 +141,7 @@ checked.addEventListener("click", (e) => {
   setTimeout(() => {
     presentation.classList.add("looker");
     confirmed.classList.add("hide-content");
-    message4 = [];
+    message4 = null;
   }, 2001);
 
   setTimeout(() => {
@@ -159,8 +153,3 @@ exit.addEventListener("click", (e) => {
   e.preventDefault();
   robotCheckForm.classList.add("hide-content");
 });
-
-// theirName.innerText = "";
-// email.innerText = "";
-// phone.innerText = "";
-// message.innerText = "";
