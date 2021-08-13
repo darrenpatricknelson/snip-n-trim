@@ -52,12 +52,15 @@ const robotCheckForm = document.getElementById("robot-check-form");
 
 var validRegex =
   /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-var phoneNumber = /^\d{10}$/;
+// var phoneNumber = /^\d{10}$/;
+var phoneNumber2 = /(\d{3})[ -]?(\d{3})[ -]?(\d{4})*$/;
+var phoneError1 = /^\d{11}$/;
+var phoneError2 = /^\d{12}$/;
 
 form.addEventListener("submit", (e) => {
   let message1 = [];
   let message2 = [];
-  let message3 = [];
+  let message3 = null;
 
   if (theirName.value === "" || theirName.value == null) {
     message1.push("* Name is required");
@@ -67,8 +70,13 @@ form.addEventListener("submit", (e) => {
     message2.push("* Valid email is required");
   }
 
-  if (!phone.value.match(phoneNumber)) {
-    message3.push("* Invalid phone number");
+  if (
+    !phone.value
+      .replaceAll(/[^\w\s]/gi, "")
+      .replaceAll(" ", "")
+      .match(/^[0-9]{10}$/)
+  ) {
+    message3 = "* Invalid phone number";
   }
 
   if (message1.length > 0) {
@@ -87,7 +95,7 @@ form.addEventListener("submit", (e) => {
     errorElement_email.innerText = "";
   }
 
-  if (message3.length > 0) {
+  if (message3) {
     e.preventDefault();
     errorElement_phone.innerText = message3;
   } else {
