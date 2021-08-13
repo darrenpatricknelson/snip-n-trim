@@ -30,6 +30,8 @@ a {
   margin: 10px auto 30px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 .home-page_logo {
