@@ -1,0 +1,20 @@
+.home-page {
+  margin: 10px auto 30px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home-page_logo {
+  flex-basis: 50%;
+  flex-grow: 1;
+  text-align: center;
+  text-transform: capitalize;
+  color: $color-text-white;
+  padding: 20px 10px;
+}
+
+.home-page_information {
+  padding: 15px 20px;
+  flex-grow: 1;
+  flex-basis: 50%;
+}
