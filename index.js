@@ -77,7 +77,7 @@ form.addEventListener("submit", (e) => {
       .replaceAll(" ", "")
       .match(/^[0-9]{10}$/)
   ) {
-    message3 = "* Invalid phone number";
+    message3 = "* Valid phone number is required";
   }
 
   if (message1) {
