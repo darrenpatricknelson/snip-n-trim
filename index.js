@@ -46,7 +46,7 @@ function saveContactInfo(clientName, clientEmail, clientPhone, clientMessage) {
     message: clientMessage,
   });
 
-  retrieveInfos;
+  retrieveInfos();
 }
 
 // retrieve infos
@@ -59,20 +59,14 @@ function gotData(data) {
   let info = data.val();
   let keys = Object.keys(info);
 
-  for (let i = 0; i < keys.length; i++) {
-    let infoData = keys[i];
-
-    let clientName = info[infoData].clientName;
-    let clientEmail = info[infoData].clientEmail;
-    let clientPhone = info[infoData].clientPhone;
-    let clientMessage = info[infoData].clientMessage;
-
-    return clientName, clientEmail, clientPhone, clientMessage;
-  }
-  console.log(clientName, clientEmail, clientPhone, clientMessage);
+  keys.forEach((key) => {
+    for (prop in info[key]) {
+      console.log(info[key][prop]);
+    }
+  });
 }
 
-//all the form listen events
+// all the form listen events
 
 const navToggler = document.querySelector(".nav-toggler");
 navToggler.addEventListener("click", navToggle);
