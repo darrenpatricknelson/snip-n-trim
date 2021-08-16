@@ -16,10 +16,10 @@ let contactInfo = firebase.database().ref("infos");
 
 // capturing the information from the form
 function submitForm() {
-  let clientName = document.getElementsByClassName(".client_name");
-  let clientEmail = document.getElementsByClassName(".client_email");
-  let clientPhone = document.getElementsByClassName(".client_phone");
-  let clientMessage = document.getElementsByClassName(".client_message");
+  let clientName = document.querySelector(".client_name").value;
+  let clientEmail = document.querySelector(".client_email").value;
+  let clientPhone = document.querySelector(".client_phone").value;
+  let clientMessage = document.querySelector(".client_message").value;
 
   saveContactInfo(clientName, clientEmail, clientPhone, clientMessage);
 
