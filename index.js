@@ -83,6 +83,18 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // contact form
+// for the input decoration (we will have to figure this shit out)
+// (what needs to happen is = once you click on the input field)
+// (it should stay active, however, once you click to the next active field)
+// (that field becomes active and the previous field becomes inactive)
+// const inputField = document.querySelector(".input");
+
+// inputField.addEventListener("click", (e) => {
+//   inputField.classList.add("input-active");
+// });
+
+// actual contact form
+
 const form = document.getElementById("form");
 const theirName = document.getElementById("form_name");
 const email = document.getElementById("form_email");
@@ -107,11 +119,17 @@ form.addEventListener("submit", (e) => {
   let message3 = null;
 
   if (theirName.value === "" || theirName.value == null) {
+    theirName.classList.add("input-error");
     message1 = "* Name is required";
+  } else {
+    theirName.classList.remove("input-error");
   }
 
   if (!email.value.match(validRegex)) {
+    email.classList.add("input-error");
     message2 = "* Valid email is required";
+  } else {
+    email.classList.remove("input-error");
   }
 
   if (
@@ -120,7 +138,10 @@ form.addEventListener("submit", (e) => {
       .replaceAll(" ", "")
       .match(/^[0-9]{10}$/)
   ) {
+    phone.classList.add("input-error");
     message3 = "* Valid phone number is required";
+  } else {
+    phone.classList.remove("input-error");
   }
 
   if (message1) {

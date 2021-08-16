@@ -83,11 +83,14 @@
   resize: vertical;
   border-radius: 10%;
 }
-.input:active {
-  border: 0.5px solid black;
+.input-active {
+  border-bottom: 5px solid green;
 }
 .input:hover {
-  border: 0.5px solid black;
+  border-bottom: 5px solid green;
+}
+.input-error {
+  border-bottom: 5px solid red;
 }
 .input__message {
   height: 100px;
