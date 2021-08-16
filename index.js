@@ -2,6 +2,7 @@
 var firebaseConfig = {
   apiKey: "AIzaSyD8jhwZ3mad1ZgNLR_askhj1M5XpjuRAUc",
   authDomain: "snip-n-trim.firebaseapp.com",
+  databaseURL: "https://snip-n-trim-default-rtdb.firebaseio.com",
   projectId: "snip-n-trim",
   storageBucket: "snip-n-trim.appspot.com",
   messagingSenderId: "1073689430763",
