@@ -1,13 +1,3 @@
-// firebase admin key
-// var admin = require("firebase-admin");
-
-// var serviceAccount = require("path/to/serviceAccountKey.json");
-
-// admin.initializeApp({
-//   credential: admin.credential.cert(serviceAccount),
-//   databaseURL: "https://snip-n-trim-default-rtdb.firebaseio.com",
-// });
-
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyD8jhwZ3mad1ZgNLR_askhj1M5XpjuRAUc",
@@ -49,21 +39,24 @@ function saveContactInfo(clientName, clientEmail, clientPhone, clientMessage) {
   retrieveInfos();
 }
 
-// retrieve infos
-function retrieveInfos() {
-  let ref = firebase.database().ref("clientInformation");
-  ref.on("value", gotData);
-}
+//  save your client information
 
-function gotData(data) {
-  let info = data.val();
-  let keys = Object.keys(info);
+async function logData(snapshot) {
+  var data = await snapshot.toJSON();
+  var keys = Object.keys(data);
 
   keys.forEach((key) => {
-    for (prop in info[key]) {
-      console.log(info[key][prop]);
-    }
+    console.log(data[key]);
   });
+}
+
+function retrieveInfos() {
+  firebase
+    .database()
+    .ref("clientInformation")
+    .orderByKey()
+    .limitToLast(1)
+    .on("value", logData);
 }
 
 // all the form listen events
