@@ -1,5 +1,28 @@
 /* portfolio page */
 .portfolio-page {
+  background-color: red;
   margin: 20px auto;
   padding: 20px 30px;
+}
+.project-1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.project-1-information {
+  background-color: lightblue;
+  min-width: 600px;
+  max-width: 1000px;
+  height: 400px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.project-1-images {
+  background-color: lightcoral;
+  width: 400px;
+  height: 400px;
 }
