@@ -1,3 +1,45 @@
+// Your web app's Firebase configuration
+var firebaseConfig = {
+  apiKey: "AIzaSyD8jhwZ3mad1ZgNLR_askhj1M5XpjuRAUc",
+  authDomain: "snip-n-trim.firebaseapp.com",
+  projectId: "snip-n-trim",
+  storageBucket: "snip-n-trim.appspot.com",
+  messagingSenderId: "1073689430763",
+  appId: "1:1073689430763:web:642618f14787e746e54cae",
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+
+// create a reference to contactInfo
+let contactInfo = firebase.database().ref("infos");
+
+// capturing the information from the form
+function submitForm() {
+  let clientName = document.getElementsByClassName(".client_name");
+  let clientEmail = document.getElementsByClassName(".client_email");
+  let clientPhone = document.getElementsByClassName(".client_phone");
+  let clientMessage = document.getElementsByClassName(".client_message");
+
+  saveContactInfo(clientName, clientEmail, clientPhone, clientMessage);
+
+  console.log("success!");
+}
+
+// save all the info to firebase
+
+function saveContactInfo(clientName, clientEmail, clientPhone, clientMessage) {
+  let newContactInfo = contactInfo.push();
+
+  newContactInfo.set({
+    Username: clientName,
+    email: clientEmail,
+    phoneNumber: clientPhone,
+    message: clientMessage,
+  });
+}
+
+//all the form listen events
+
 const navToggler = document.querySelector(".nav-toggler");
 navToggler.addEventListener("click", navToggle);
 
@@ -116,6 +158,8 @@ let message4 = null;
 
 checked.addEventListener("click", (e) => {
   e.preventDefault();
+
+  // This will present the hidden overlay, commencing the 'reCAPTCHA' click event
   presentation.classList.remove("looker");
   loading.classList.remove("hide-content");
   setTimeout(() => {
@@ -123,6 +167,10 @@ checked.addEventListener("click", (e) => {
     confirmed.classList.remove("hide-content");
   }, 1000);
 
+  // this is the function that will save all the contact information
+  setTimeout(submitForm, 1999);
+
+  // This will clear all the fields
   setTimeout(() => {
     robotCheckForm.classList.add("hide-content");
     theirName.value = "";
@@ -138,12 +186,14 @@ checked.addEventListener("click", (e) => {
     }
   }, 2000);
 
+  // This will add the decoration back to the hidden overlay
   setTimeout(() => {
     presentation.classList.add("looker");
     confirmed.classList.add("hide-content");
     message4 = null;
   }, 2001);
 
+  // This will clear the "Thank you message"
   setTimeout(() => {
     successMessage.innerText = "";
   }, 10000);

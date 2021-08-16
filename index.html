@@ -119,7 +119,7 @@
         </div>
     </section>
 
-    <section data-pages class="container portfolio-page " id="portfolio">
+    <section data-pages class="container portfolio-page hide-content" id="portfolio">
         <div class="project-1">
           <div class="project-1-information"></div>
           <div class="project-1-images"></div>
@@ -132,7 +132,7 @@
         </div>
     </section>
 
-    <section data-pages class="container contact-page hide-content" id="contact">
+    <section data-pages class="container contact-page " id="contact">
       <div class="contact_decoration">
         <p>We appreciate all of you.</p>
         <p>If you'd like to make use of our services, please feel free to fill out the form with all your details and we will make sure to contact you.</p>
@@ -158,13 +158,13 @@
       <div class="contact_form">
         <!-- <form action="https://formsubmit.co/nelson.darrenp10.dnp@gmail.com" method="POST" id="form"> -->
           <form id="form">
-          <input type="text" class="input" placeholder="Name and Surname" id="form_name" name="name"><br>
+          <input type="text" class="input client_name" placeholder="Name and Surname" id="form_name" name="name"><br>
           <div class="error_message" id="error_name"></div>
-          <input type="text" class="input" placeholder="Email address" id="form_email" name="email"><br>
+          <input type="text" class="input client_email" placeholder="Email address" id="form_email" name="email"><br>
           <div class="error_message" id="error_email"></div>
-          <input type="text" class="input" placeholder="Phone number" id="form_phone" maxlength="12" name="phoneNumber"><br>
+          <input type="text" class="input client_phone" placeholder="Phone number" id="form_phone" maxlength="12" name="phoneNumber"><br>
           <div class="error_message" id="error_phone"></div>
-          <textarea class="input input__message" placeholder="Type your message here..." id="form_message" name="message"></textarea>
+          <textarea class="input input__message client_message" placeholder="Type your message here..." id="form_message" name="message"></textarea>
           <div class="success_message" id="thankYou"></div>
           <!-- <input class="contact__submit" type="submit" value="Submit" id="submit"> -->
           <button class="contact__submit" type="submit">submit</button>
@@ -211,7 +211,11 @@
       </div>
     </footer>
 
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
+
     <script src="index.js"></script>
-    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
   </body>
 </html>
