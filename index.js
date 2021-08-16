@@ -22,9 +22,9 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 // create a reference to contactInfo
-let contactInfo = firebase.database().ref("infos");
+let contactInfo = firebase.database().ref("clientInformation");
 
-// capturing the information from the form
+// capturing the information from the form (being called in the reCAPTCHA event)
 function submitForm() {
   let clientName = document.querySelector(".client_name").value;
   let clientEmail = document.querySelector(".client_email").value;
@@ -32,8 +32,6 @@ function submitForm() {
   let clientMessage = document.querySelector(".client_message").value;
 
   saveContactInfo(clientName, clientEmail, clientPhone, clientMessage);
-
-  console.log("success!");
 }
 
 // save all the info to firebase
@@ -47,25 +45,31 @@ function saveContactInfo(clientName, clientEmail, clientPhone, clientMessage) {
     phoneNumber: clientPhone,
     message: clientMessage,
   });
+
+  retrieveInfos;
 }
 
 // retrieve infos
-let ref = firebase.database().ref("infos");
-ref.on("value", gotData);
+function retrieveInfos() {
+  let ref = firebase.database().ref("clientInformation");
+  ref.on("value", gotData);
+}
 
 function gotData(data) {
   let info = data.val();
   let keys = Object.keys(info);
 
   for (let i = 0; i < keys.length; i++) {
-    let i = keys[i];
-    let name = info[i].name;
-    let email = info[i].email;
-    let phoneNumber = info[i].phoneNumber;
-    let message = info[i].message;
+    let infoData = keys[i];
 
-    console.log(name, email, phoneNumber, message);
+    let clientName = info[infoData].clientName;
+    let clientEmail = info[infoData].clientEmail;
+    let clientPhone = info[infoData].clientPhone;
+    let clientMessage = info[infoData].clientMessage;
+
+    return clientName, clientEmail, clientPhone, clientMessage;
   }
+  console.log(clientName, clientEmail, clientPhone, clientMessage);
 }
 
 //all the form listen events
@@ -218,7 +222,7 @@ checked.addEventListener("click", (e) => {
     confirmed.classList.remove("hide-content");
   }, 1000);
 
-  // this is the function that will save all the contact information
+  // this is the function that will save all the contact information to firebase
   setTimeout(submitForm, 1999);
 
   // This will clear all the fields
