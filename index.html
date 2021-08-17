@@ -157,7 +157,7 @@
       </div>
       <div class="contact_form">
         <!-- <form action="https://formsubmit.co/nelson.darrenp10.dnp@gmail.com" method="POST" id="form"> -->
-          <form id="form">
+          <form method="POST" id="form">
           <input type="text" class="input client_name" placeholder="Name and Surname" id="form_name" name="name"><br>
           <div class="error_message" id="error_name"></div>
           <input type="text" class="input client_email" placeholder="Email address" id="form_email" name="email"><br>
@@ -211,10 +211,13 @@
       </div>
     </footer>
 
+    <!-- script to send email using javascript -->
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
     <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase.js"></script>
 
+    <!-- script link to local js file -->
     <script src="index.js"></script>
     <!-- <script src="https://www.google.com/recaptcha/api.js"></script> -->
   </body>
