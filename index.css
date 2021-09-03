@@ -53,6 +53,24 @@ a {
 .about_us-page {
   margin: 20px auto;
   padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 50px;
+  text-align: center;
+  padding: 30px;
+}
+
+.about_us-heading {
+  font: 2.5em sans-serif;
+}
+
+.about_us-sub-heading {
+  font: 1.5em sans-serif;
+}
+
+.about_us-page p {
+  max-width: 75%;
 }
 
 /* Services page */
