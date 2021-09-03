@@ -2,4 +2,64 @@
 .services-page {
   margin: 20px auto;
   padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  // justify-content: center;
+  align-items: center;
+  // line-height: 50px; // might not need this. check it out when all the info is put in place
+
+  border: 1px solid;
+  text-align: center;
+  padding: 30px;
+}
+
+.services_page-heading {
+  font: 1.5em sans-serif;
+}
+
+.services-page p {
+  max-width: 75%;
+}
+// this is the actual services
+
+.services_page-sub-heading {
+  font: 1.2em sans-serif;
+}
+
+.services {
+  border: 1px solid;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  // width: 80%;
+  padding: 20px 0;
+  text-align: left;
+}
+
+.gardening {
+  border: 1px solid;
+  padding: 15px;
+  max-width: 23%;
+}
+
+.landscaping {
+  border: 1px solid;
+  padding: 15px;
+  max-width: 23%;
+}
+
+.irrigation {
+  border: 1px solid;
+  padding: 15px;
+  max-width: 23%;
+}
+
+.rubble {
+  border: 1px solid;
+  padding: 15px;
+  max-width: 23%;
+}
+
+.services_page-info {
+  font: 0.9em sans-serif;
 }
