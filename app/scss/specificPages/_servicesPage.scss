@@ -8,7 +8,7 @@
   align-items: center;
   // line-height: 50px; // might not need this. check it out when all the info is put in place
 
-  border: 1px solid;
+  // border: 1px solid;
   text-align: center;
   padding: 30px;
 }
@@ -27,7 +27,7 @@
 }
 
 .services {
-  border: 1px solid;
+  // border: 1px solid;
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap;
@@ -37,29 +37,40 @@
 }
 
 .gardening {
-  border: 1px solid;
+  // border: 1px solid;
   padding: 15px;
   max-width: 23%;
+  line-height: 20px;
 }
 
 .landscaping {
-  border: 1px solid;
+  // border: 1px solid;
   padding: 15px;
   max-width: 23%;
+  line-height: 20px;
 }
 
 .irrigation {
-  border: 1px solid;
+  // border: 1px solid;
   padding: 15px;
   max-width: 23%;
+  line-height: 20px;
 }
 
 .rubble {
-  border: 1px solid;
+  // border: 1px solid;
   padding: 15px;
   max-width: 23%;
+  line-height: 20px;
 }
 
 .services_page-info {
   font: 0.9em sans-serif;
+}
+
+// vectors
+
+.vector {
+  min-width: 100px;
+  min-height: 100px;
 }
