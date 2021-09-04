@@ -74,6 +74,30 @@
   padding: 10px;
 }
 
+.hover-underline-animation-header {
+  // display: inline-block;
+  position: relative;
+  // color: #0087ca;
+}
+
+.hover-underline-animation-header:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: $color-text-white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation-header:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 /* navbar button */
 .nav-toggler {
   height: 34px;
@@ -167,6 +191,30 @@
 .footer-col ul li a:hover {
   color: #fff;
   padding-left: 8px;
+}
+
+.hover-underline-animation-footer {
+  // display: inline-block;
+  position: relative;
+  // color: #0087ca;
+}
+
+.hover-underline-animation-footer:after {
+  content: "";
+  position: absolute;
+  width: 40%;
+  transform: scaleX(0);
+  height: 2px;
+  // bottom: 0;
+  // left: 0;
+  background-color: $color-text-white;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.hover-underline-animation-footer:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 .footer-col .social-links a {
