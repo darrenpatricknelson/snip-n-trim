@@ -78,6 +78,7 @@ a {
   margin: 20px auto;
   padding: 20px 30px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -106,25 +107,25 @@ a {
 
 .gardening {
   padding: 15px;
-  max-width: 23%;
+  max-width: 300px;
   line-height: 20px;
 }
 
 .landscaping {
   padding: 15px;
-  max-width: 23%;
+  max-width: 300px;
   line-height: 20px;
 }
 
 .irrigation {
   padding: 15px;
-  max-width: 23%;
+  max-width: 300px;
   line-height: 20px;
 }
 
 .rubble {
   padding: 15px;
-  max-width: 23%;
+  max-width: 300px;
   line-height: 20px;
 }
 
@@ -133,8 +134,8 @@ a {
 }
 
 .vector {
-  min-width: 100px;
-  min-height: 100px;
+  max-width: 150px;
+  max-height: 150px;
 }
 
 /* portfolio page */
