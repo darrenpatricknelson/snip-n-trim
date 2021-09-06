@@ -5,7 +5,7 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
-  // justify-content: center;
+  justify-content: center;
   align-items: center;
   // line-height: 50px; // might not need this. check it out when all the info is put in place
 
@@ -16,11 +16,13 @@
 
 .services_page-heading {
   font: 1.5em sans-serif;
+  line-height: 1.8;
 }
 
-.services-page p {
-  max-width: 75%;
+.services_page-text {
+  max-width: 60%;
 }
+
 // this is the actual services
 
 .services_page-sub-heading {
@@ -30,7 +32,6 @@
 .services {
   // border: 1px solid;
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
   // width: 80%;

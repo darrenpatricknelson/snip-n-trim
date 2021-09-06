@@ -80,6 +80,7 @@ a {
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
   text-align: center;
   padding: 30px;
@@ -87,10 +88,11 @@ a {
 
 .services_page-heading {
   font: 1.5em sans-serif;
+  line-height: 1.8;
 }
 
-.services-page p {
-  max-width: 75%;
+.services_page-text {
+  max-width: 60%;
 }
 
 .services_page-sub-heading {
@@ -99,7 +101,6 @@ a {
 
 .services {
   display: flex;
-  flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 20px 0;
