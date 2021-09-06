@@ -43,6 +43,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  text-align: center;
   // border: 1px solid;
 }
 
@@ -74,13 +75,13 @@
 
 /* Position the "next button" to the right */
 .next {
-  right: 0;
+  right: 10px;
   border-radius: 3px 0 0 3px;
 }
 
 /* Position the "previous button" to the left */
 .prev {
-  left: 0;
+  left: 10px;
   border-radius: 3px 0 0 3px;
 }
 
@@ -127,7 +128,7 @@
 ::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px grey;
   border-radius: 10px;
-  background: $color-1;
+  background: $color-2;
 }
 
 /* Handle */
