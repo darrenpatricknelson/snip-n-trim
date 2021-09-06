@@ -56,7 +56,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  line-height: 50px;
+  line-height: 2;
   text-align: center;
   padding: 30px;
 }
