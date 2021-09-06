@@ -1,3 +1,91 @@
+// This is the carousel on the portfolio page
+// Project 1
+var slideIndexP1 = 1;
+showSlidesP1(slideIndexP1);
+
+// Next/previous controls
+function plusSlidesP1(n) {
+  showSlidesP1((slideIndexP1 += n));
+}
+
+// Thumbnail image controls
+function currentSlideP1(n) {
+  showSlidesP1((slideIndexP1 = n));
+}
+
+function showSlidesP1(n) {
+  var i;
+  var slides = document.getElementsByClassName("slideshow1");
+  if (n > slides.length) {
+    slideIndexP1 = 1;
+  }
+  if (n < 1) {
+    slideIndexP1 = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndexP1 - 1].style.display = "block";
+}
+
+// Project 2
+var slideIndexP2 = 1;
+showSlidesP2(slideIndexP2);
+
+// Next/previous controls
+function plusSlidesP2(n) {
+  showSlidesP2((slideIndexP2 += n));
+}
+
+// Thumbnail image controls
+function currentSlideP2(n) {
+  showSlidesP2((slideIndexP2 = n));
+}
+
+function showSlidesP2(n) {
+  var i;
+  var slides = document.getElementsByClassName("slideshow2");
+  if (n > slides.length) {
+    slideIndexP2 = 1;
+  }
+  if (n < 1) {
+    slideIndexP2 = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndexP2 - 1].style.display = "block";
+}
+
+// Project 3
+var slideIndexP3 = 1;
+showSlidesP3(slideIndexP3);
+
+// Next/previous controls
+function plusSlidesP3(n) {
+  showSlidesP3((slideIndexP3 += n));
+}
+
+// Thumbnail image controls
+function currentSlideP3(n) {
+  showSlidesP3((slideIndexP3 = n));
+}
+
+function showSlidesP3(n) {
+  var i;
+  var slides = document.getElementsByClassName("slideshow3");
+  if (n > slides.length) {
+    slideIndexP3 = 1;
+  }
+  if (n < 1) {
+    slideIndexP3 = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slides[slideIndexP3 - 1].style.display = "block";
+}
+
 // Your web app's Firebase configuration
 var firebaseConfig = {
   apiKey: "AIzaSyD8jhwZ3mad1ZgNLR_askhj1M5XpjuRAUc",
@@ -22,6 +110,8 @@ function submitForm() {
   let clientMessage = document.querySelector(".client_message").value;
 
   saveContactInfo(clientName, clientEmail, clientPhone, clientMessage);
+
+  // sendEmail(clientName, clientEmail, clientPhone, clientMessage);
 }
 
 // save all the info to firebase
@@ -39,14 +129,17 @@ function saveContactInfo(clientName, clientEmail, clientPhone, clientMessage) {
   retrieveInfos();
 }
 
-//  save your client information
+//  retrieving your client information
+
+let clientInformation = [];
 
 async function logData(snapshot) {
   var data = await snapshot.toJSON();
   var keys = Object.keys(data);
 
   keys.forEach((key) => {
-    console.log(data[key]);
+    clientInformation.push(data[key]);
+    sendEmail();
   });
 }
 
@@ -58,6 +151,21 @@ function retrieveInfos() {
     .limitToLast(1)
     .on("value", logData);
 }
+
+//  send the email
+
+// function sendEmail() {
+//   console.log(clientInformation[0]);
+//   Email.send({
+//     Host: "smtp.gmail.com",
+//     Username: "darrenp.dev@gmail.com",
+//     Password: "Darrenp10",
+//     To: "darrenp.dev@gmail.com",
+//     From: "darrenp.dev@gmail.com",
+//     Subject: `You received a new email`,
+//     Body: `${clientInformation}`,
+//   }).then((clientInformation) => console.log("Message sent successfully"));
+// }
 
 // all the form listen events
 
