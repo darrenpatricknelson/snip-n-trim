@@ -99,6 +99,7 @@ a {
 
 .services {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
   flex-wrap: wrap;
   padding: 20px 0;
