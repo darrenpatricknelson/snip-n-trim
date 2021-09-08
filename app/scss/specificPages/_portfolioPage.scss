@@ -24,9 +24,9 @@
 .project-images {
   position: relative;
   // background-color: lightblue;
-  min-width: 600px;
-  max-width: 1000px;
-  height: 600px;
+  // min-width: 600px;
+  // max-width: 1000px;
+  // height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,8 +35,8 @@
 
 .project-information {
   // background-color: lightcoral;
-  width: 400px;
-  height: 400px;
+  // width: 400px;
+  // height: 400px;
   padding: 10px;
   overflow: auto;
   display: flex;
@@ -44,6 +44,7 @@
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 10px;
   // border: 1px solid;
 }
 

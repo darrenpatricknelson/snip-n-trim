@@ -97,6 +97,7 @@ a {
 
 .services_page-sub-heading {
   font: 1.2em sans-serif;
+  text-align: center;
 }
 
 .services {
@@ -138,6 +139,10 @@ a {
 .vector {
   max-width: 150px;
   max-height: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 /* portfolio page */
@@ -164,17 +169,12 @@ a {
 
 .project-images {
   position: relative;
-  min-width: 600px;
-  max-width: 1000px;
-  height: 600px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .project-information {
-  width: 400px;
-  height: 400px;
   padding: 10px;
   overflow: auto;
   display: flex;
@@ -182,6 +182,7 @@ a {
   justify-content: center;
   align-items: center;
   text-align: center;
+  margin: 10px;
 }
 
 /* Hide the images by default */
@@ -873,5 +874,22 @@ a {
     width: 100%;
     height: 25vh;
     padding-top: 50px;
+  }
+}
+@media (max-width: 700px) {
+  .project-ls,
+.project-rs {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .project-information {
+    margin: 10px 0;
+  }
+
+  .project-images {
+    width: 100%;
+    height: 100%;
   }
 }

@@ -27,6 +27,7 @@
 
 .services_page-sub-heading {
   font: 1.2em sans-serif;
+  text-align: center;
 }
 
 .services {
@@ -76,4 +77,8 @@
 .vector {
   max-width: 150px;
   max-height: 150px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
