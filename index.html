@@ -29,7 +29,7 @@
 
             <a href="#" class="confirmed" id="checked">
 
-          <div class="recaptcha-check-presentation looker" id="presentation-box">
+          <div class="recaptcha-check-presentation looker" id="tick-box">
 
               <div class="recaptcha-check-loading hide-content" id="check-loading">
               </div>
@@ -249,9 +249,29 @@
     </section>
 
     <section data-pages class="container testimonials-page hide-content" id="testimonials">
-        <div class="...">
+        <div class="declaration">
           <p>"Add information about testimonials"</p>
         </div>
+        
+            <!-- <div class="name_box">name </div>
+            <div class="review_box">review</div> -->
+        <div class="reviews" id="reviewSection">
+          <div class="review-box" id="review_box">
+          </div>
+        </div>
+        <div class="review-input">
+          <form id="review-form">
+            <input type="text" class="input reviewer_name" placeholder="Name and Surname" id="reviewer_name"><br>
+            <div class="error_message" id="review_error_name"></div>
+            <textarea class="input input__message review_message" 
+              placeholder="Type your review here..." 
+              id="review_message" name="message"></textarea><br>
+            <div class="error_message" id="review_error_message"></div>
+            <div class="success_message" id="review_thankYou"></div>
+            <input class="contact__submit" type="submit" value="Submit" id="review-submit">
+          </form>
+        </div>
+
     </section>
 
     <section data-pages class="container contact-page hide-content" id="contact">

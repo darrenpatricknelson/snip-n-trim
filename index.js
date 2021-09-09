@@ -167,7 +167,7 @@ function retrieveInfos() {
 //   }).then((clientInformation) => console.log("Message sent successfully"));
 // }
 
-// all the form listen events
+// To change pages
 
 const navToggler = document.querySelector(".nav-toggler");
 navToggler.addEventListener("click", navToggle);
@@ -221,7 +221,178 @@ window.addEventListener("DOMContentLoaded", () => {
 //   inputField.classList.add("input-active");
 // });
 
-// actual contact form
+// create a reference to reviewer info
+let reviewerInfo = firebase.database().ref("reviewerInfo");
+
+// fetching latest objects
+reviewerInfo.orderByKey().limitToLast(6).once("value", appendInitialReviews);
+
+async function appendInitialReviews(snapshot) {
+  var data = await snapshot.toJSON();
+  var keys = Object.keys(data);
+
+  keys.forEach((key) => {
+    setReview(data[key]);
+  });
+}
+
+// capturing the information from the form
+function submitReview() {
+  let reviewerName = document.querySelector(".reviewer_name").value;
+  let reviewerMessage = document.querySelector(".review_message").value;
+
+  saveReviewerInfo(reviewerName, reviewerMessage);
+}
+
+// save all the info to firebase
+function saveReviewerInfo(reviewerName, reviewerMessage) {
+  let newReviewerInfo = reviewerInfo.push();
+
+  newReviewerInfo.set({
+    Username: reviewerName,
+    message: reviewerMessage,
+  });
+
+  retrieveReviewerInfos();
+}
+
+//  retrieving your client information
+
+async function appendLastReview(snapshot) {
+  var data = await snapshot.toJSON();
+  var keys = Object.keys(data);
+
+  setReview(data[keys[0]]);
+
+  reviewerInfo.off("value", appendLastReview);
+}
+
+function retrieveReviewerInfos() {
+  reviewerInfo.orderByKey().limitToLast(1).on("value", appendLastReview);
+}
+
+//  set review
+
+function setReview(data) {
+  data; // {username: "someone", message: "hello there"}
+  let reviewBox = document.getElementById("review_box");
+
+  if (reviewBox.innerHTML.trim().length == 0) {
+    createNew(data);
+  } else {
+    createSecondary(data);
+  }
+}
+
+// create functions
+function createNew(data) {
+  // create the parent
+  let reviewBox = document.getElementById("review_box");
+  // create child
+  let textName = document.createElement("p");
+  let textMessage = document.createElement("p");
+
+  let nameValue = document.createTextNode(data.Username);
+  let messsageValue = document.createTextNode(data.message);
+
+  // add text to p tag
+  textName.appendChild(nameValue);
+  textName.classList.add("name_box");
+  textMessage.appendChild(messsageValue);
+  textMessage.classList.add("review_box");
+  // add child to parent
+  reviewBox.appendChild(textName);
+  reviewBox.appendChild(textMessage);
+
+  // console.log("empty");
+  // clear field
+  // value1.innerText = "";
+}
+
+function createSecondary(data) {
+  const reviewContainer = document.getElementById("reviewSection");
+  // create new the parent
+  let newReviewBox = document.createElement("div");
+  newReviewBox.classList.add("review-box");
+  // create child
+  let newText = document.createElement("p");
+  let newMessage = document.createElement("p");
+  let newNameValue = document.createTextNode(data.Username);
+  let newMesssageValue = document.createTextNode(data.message);
+
+  // add text to p tag
+  newText.appendChild(newNameValue);
+  newText.classList.add("name_box");
+  newMessage.appendChild(newMesssageValue);
+  newMessage.classList.add("review_box");
+  // add child to parent
+  newReviewBox.appendChild(newText);
+  newReviewBox.appendChild(newMessage);
+  // console.log("full");
+  reviewContainer.appendChild(newReviewBox);
+}
+
+// review form on the testimonial page
+const reviewForm = document.getElementById("review-form");
+const reviewerName = document.getElementById("reviewer_name");
+const reviewerMessage = document.getElementById("review_message");
+const errorElement_reviewerName = document.getElementById("review_error_name");
+const errorElement_reviewerMessage = document.getElementById(
+  "review_error_message"
+);
+const reviewSuccessMessage = document.getElementById("review_thankYou");
+
+reviewForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  let reviewerNameBox = reviewerName;
+  let reviewerMessageBox = reviewerMessage;
+  let reviewer_nameError = null;
+  let reviewer_messageError = null;
+  let reviewer_thankYou = null;
+
+  // error for blank name
+  if (reviewerName.value === "" || reviewerName.value == null) {
+    reviewerName.classList.add("input-error");
+    reviewer_nameError = "* Name and surname is required";
+  } else {
+    reviewerName.classList.remove("input-error");
+  }
+
+  // error for blank message
+  if (reviewerMessage.value === "" || reviewerMessage.value == null) {
+    reviewerMessage.classList.add("input-error");
+    reviewer_messageError = "* Your review is important to us";
+  } else {
+    reviewerMessage.classList.remove("input-error");
+  }
+
+  if (reviewer_nameError) {
+    errorElement_reviewerName.innerText = reviewer_nameError;
+  } else {
+    errorElement_reviewerName.innerText = "";
+  }
+
+  if (reviewer_messageError) {
+    errorElement_reviewerMessage.innerText = reviewer_messageError;
+  } else {
+    errorElement_reviewerMessage.innerText = "";
+  }
+
+  if (!reviewer_nameError && !reviewer_messageError) {
+    submitReview();
+    reviewerNameBox.value = "";
+    reviewerMessageBox.value = "";
+    reviewer_thankYou =
+      "Thank you for your review. We appreciate our loyal cliental";
+    reviewSuccessMessage.innerText = reviewer_thankYou;
+    setTimeout(() => {
+      reviewer_thankYou = "";
+      reviewSuccessMessage.innerText = reviewer_thankYou;
+    }, 3000);
+  }
+});
+
+// contact form on the contact page
 
 const form = document.getElementById("form");
 const theirName = document.getElementById("form_name");
@@ -297,7 +468,7 @@ form.addEventListener("submit", (e) => {
 
 // this is the reCAPTCHA click event
 
-const presentation = document.getElementById("presentation-box");
+const tickBox = document.getElementById("tick-box");
 const checked = document.getElementById("checked");
 const loading = document.getElementById("check-loading");
 const confirmed = document.getElementById("check-confirmed");
@@ -310,7 +481,7 @@ checked.addEventListener("click", (e) => {
   e.preventDefault();
 
   // This will present the hidden overlay, commencing the 'reCAPTCHA' click event
-  presentation.classList.remove("looker");
+  tickBox.classList.remove("looker");
   loading.classList.remove("hide-content");
   setTimeout(() => {
     loading.classList.add("hide-content");
@@ -338,7 +509,7 @@ checked.addEventListener("click", (e) => {
 
   // This will add the decoration back to the hidden overlay
   setTimeout(() => {
-    presentation.classList.add("looker");
+    tickBox.classList.add("looker");
     confirmed.classList.add("hide-content");
     message4 = null;
   }, 2001);

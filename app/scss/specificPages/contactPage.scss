@@ -127,12 +127,14 @@
 
 .error_message {
   color: $color-warning;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-weight: 500;
   padding-left: 10px;
 }
 .success_message {
   color: $color-success;
-  font-size: 0.8rem;
+  font-weight: 500;
+  font-size: 1rem;
   padding-left: 10px;
   padding-bottom: 10px;
 }

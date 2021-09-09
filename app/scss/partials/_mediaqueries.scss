@@ -115,9 +115,11 @@
   }
 }
 
-// portfolio page
+// Phone setup
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
+  // others
+  // portfolio page
   .project-ls,
   .project-rs {
     display: flex;
@@ -131,5 +133,12 @@
   .project-images {
     width: 100%;
     height: 100%;
+  }
+
+  // testimonial page
+  .reviews {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }

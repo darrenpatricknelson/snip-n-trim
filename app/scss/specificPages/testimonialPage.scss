@@ -2,4 +2,98 @@
 .testimonials-page {
   margin: 20px auto;
   padding: 20px 30px;
+  overflow: auto;
+}
+
+.declaration {
+  margin: 5px 0;
+  height: auto;
+  padding: 10px;
+  // delete the following
+  border: 1px solid;
+  background-color: red;
+}
+
+// this is the actual outputted reviews
+
+.reviews {
+  margin: 5px 0;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  // align-items: center;
+  justify-content: center;
+  // delete the following
+  border: 1px solid;
+  // background-color: red;
+}
+
+.review-box {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 10px;
+  // delete the following
+  // background-color: blue;
+}
+
+.name_box,
+.review_box {
+  max-width: 100%;
+  // align-items: stretch;
+  margin: 5px;
+  padding: 15px;
+  // delete the following
+  border: 1px solid;
+}
+
+.name_box {
+  min-height: 20%;
+}
+
+.name_box:after {
+  content: "\200B";
+}
+
+.review_box {
+  flex-grow: 1;
+}
+
+// This is the input field for the reviews
+
+.review-input {
+  margin: auto;
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 300px;
+  padding: 10px;
+  // delete the following
+  // background-color: blue;
+}
+
+.review-input-box {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.review__submit {
+  background-color: $color-2;
+  // width: 50%;
+  color: $color-button;
+  text-align: center;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  font-size: 15px;
+}
+.review__submit:hover {
+  color: $color-button-dark;
+}
+.review__submit:active {
+  transform: scale(0.9);
 }

@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* The below is an importing fonts through CSS */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
 /* lightest shade */
@@ -278,6 +279,86 @@ a {
 .testimonials-page {
   margin: 20px auto;
   padding: 20px 30px;
+  overflow: auto;
+}
+
+.declaration {
+  margin: 5px 0;
+  height: auto;
+  padding: 10px;
+  border: 1px solid;
+  background-color: red;
+}
+
+.reviews {
+  margin: 5px 0;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 1px solid;
+}
+
+.review-box {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  margin: 10px;
+}
+
+.name_box,
+.review_box {
+  max-width: 100%;
+  margin: 5px;
+  padding: 15px;
+  border: 1px solid;
+}
+
+.name_box {
+  min-height: 20%;
+}
+
+.name_box:after {
+  content: "​";
+}
+
+.review_box {
+  flex-grow: 1;
+}
+
+.review-input {
+  margin: auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 300px;
+  padding: 10px;
+}
+
+.review-input-box {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.review__submit {
+  background-color: #a3b18a;
+  color: #0000005e;
+  text-align: center;
+  padding: 5px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+  font-size: 15px;
+}
+
+.review__submit:hover {
+  color: #000000;
+}
+
+.review__submit:active {
+  transform: scale(0.9);
 }
 
 /* contact page */
@@ -409,13 +490,15 @@ a {
 
 .error_message {
   color: #ff0000;
-  font-size: 0.8rem;
+  font-size: 1rem;
+  font-weight: 500;
   padding-left: 10px;
 }
 
 .success_message {
   color: #000000;
-  font-size: 0.8rem;
+  font-weight: 500;
+  font-size: 1rem;
   padding-left: 10px;
   padding-bottom: 10px;
 }
@@ -876,7 +959,7 @@ a {
     padding-top: 50px;
   }
 }
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .project-ls,
 .project-rs {
     display: flex;
@@ -891,5 +974,11 @@ a {
   .project-images {
     width: 100%;
     height: 100%;
+  }
+
+  .reviews {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 }
