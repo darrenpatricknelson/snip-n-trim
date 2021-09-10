@@ -302,7 +302,7 @@ a {
 .review-box {
   display: flex;
   flex-direction: column;
-  width: clamp(200px, 100%, 400px);
+  width: clamp(300px, 100%, 400px);
   margin: 10px;
 }
 
@@ -959,6 +959,10 @@ a {
   }
 }
 @media (max-width: 750px) {
+  .review-box {
+    width: 300px;
+  }
+
   .project-ls,
 .project-rs {
     display: flex;
