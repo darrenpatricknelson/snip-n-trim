@@ -302,13 +302,12 @@ a {
 .review-box {
   display: flex;
   flex-direction: column;
-  width: 400px;
+  width: clamp(300px, 100%, 400px);
   margin: 10px;
 }
 
 .name_box,
 .review_box {
-  max-width: 100%;
   margin: 5px;
   padding: 15px;
   border: 1px solid;
