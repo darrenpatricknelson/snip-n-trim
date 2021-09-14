@@ -2,61 +2,58 @@
 .testimonials-page {
   margin: 20px auto;
   padding: 20px 30px;
-  overflow: auto;
+  display: flex;
+  // flex-wrap: wrap;
 }
 
 .declaration {
-  margin: 5px 0;
+  margin: 5px;
   height: auto;
-  padding: 10px;
+  padding: 20px;
+  text-align: center;
+  width: clamp(400px, 40%, 600px);
   // delete the following
-  border: 1px solid;
-  background-color: red;
+  // border: 1px solid;
+  // background-color: red;
 }
 
 // this is the actual outputted reviews
 
 .reviews {
-  margin: 5px 0;
-  padding: 10px;
-  display: flex;
-  flex-wrap: wrap;
-  // align-items: center;
+  margin: 5px;
+  padding: 0 30px 20px;
+  width: clamp(450px, 100%, 800px);
+  height: 55vh;
+  align-items: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
   justify-content: center;
-  // delete the following
-  border: 1px solid;
+  position: relative;
+  /* delete the following */
+  // border: 1px solid;
   // background-color: red;
 }
 
 .review-box {
+  padding: 10px;
   display: flex;
   flex-direction: column;
-  width: clamp(300px, 100%, 400px);
-  margin: 10px;
-  // delete the following
-  // background-color: blue;
+  // width: clamp(350px, 100%, 650px);
+  width: clamp(350px, 100%, 700px);
+  margin: 0 10px;
+  line-height: 1.5;
+  border-bottom: 5px solid lightgrey;
+  /* delete the following */
+  background-color: white;
 }
 
-.name_box,
-.review_box {
-  // max-width: 100%;
-  // align-items: stretch;
-  margin: 5px;
-  padding: 15px;
-  // delete the following
-  border: 1px solid;
+.review-title {
+  font-weight: 900;
+  padding: 5px;
 }
 
-.name_box {
-  min-height: 20%;
-}
-
-.name_box:after {
-  content: "\200B";
-}
-
-.review_box {
-  flex-grow: 1;
+.review-message {
+  padding: 5px;
 }
 
 // This is the input field for the reviews
@@ -68,7 +65,6 @@
   display: flex;
   flex-direction: column;
   width: 400px;
-  height: 300px;
   padding: 10px;
   // delete the following
   // background-color: blue;
@@ -96,4 +92,30 @@
 }
 .review__submit:active {
   transform: scale(0.9);
+}
+
+.seeAll {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  // z-index: 1;
+  right: 20px;
+  text-align: right;
+  background-color: #a3b18ab2;
+  backdrop-filter: blur(1px);
+  // border: 1px solid;
+}
+
+// see all the reviews overlay
+
+.seeAllReviewsContainer {
+  background-color: red;
+  width: 80%;
+  height: 80%;
+}
+
+// disposables
+
+.inline {
+  display: inline-block;
 }

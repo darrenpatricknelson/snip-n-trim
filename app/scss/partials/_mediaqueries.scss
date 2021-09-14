@@ -98,6 +98,12 @@
 // full page
 
 @media (min-width: 1600px) {
+  // testimonial page
+  // .reviews {
+  //   padding: 20px;
+  //   overflow-x: hidden;
+  //   overflow-y: scroll;
+  // }
   .header {
     height: 10vh;
   }
@@ -121,8 +127,14 @@
   // others
 
   // Testimonial page
+  .declaration,
+  .reviews,
   .review-box {
-    width: 300px;
+    min-width: 350px;
+  }
+
+  .declaration {
+    line-height: 2;
   }
   // portfolio page
   .project-ls,
@@ -141,6 +153,12 @@
   }
 
   // testimonial page
+  .testimonials-page {
+    flex-wrap: wrap;
+  }
+  .declaration {
+    width: 100%;
+  }
   .reviews {
     justify-content: center;
     align-items: center;

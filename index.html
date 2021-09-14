@@ -17,9 +17,11 @@
     ></script>
   </head>
   <body>
-    
-    <div class="overlay hide-content" id="robot-check-form">
 
+    <!-- all the hidden overlay pages -->
+
+    <!-- Contact page - robot check overlay -->
+    <div class="overlay hide-content" id="robot-check-form">
       <div class="robot-check">
         <a href="#" class="exit" id="exit">X</a>
         <h1>Verification</h1>
@@ -47,8 +49,12 @@
           <p>Privacy * Terms</p>
           </div>
         </div>
-
       </div>
+    </div>
+
+    <!-- Contact page - robot check overlay -->
+    <div class="overlay hide-content" id="seeAllReviews">
+      <div class="seeAllReviewsContainer">hello</div>
     </div>
 
     <header class="header">
@@ -250,15 +256,14 @@
 
     <section data-pages class="container testimonials-page " id="testimonials">
         <div class="declaration">
-          <p>"Add information about testimonials"</p>
-        </div>
-        
-            <!-- <div class="name_box">name </div>
-            <div class="review_box">review</div> -->
-        <div class="reviews" id="reviewSection">
-          <div class="review-box" id="review_box">
-          </div>
-        </div>
+          <h1 style="text-align: center;"><u> Review us! </u></h1>
+          <p>Here at snip 'n trim, the most important aspect is <strong>YOU</strong>!</p>
+          <p>We appreciate you, our cliental, more than anything. Customer satisfaction is our top priority</p>
+          <p>We strive to make <strong>you</strong> happy and we would love to hear your feedback on our job.</p>
+          <p>If you'd like to, please take sometime to give our service a review. Whether you're have with our service or a little unsatisfied,
+            we'd absolutely love to hear how you feel about the service we have provided.
+          </p>
+          <br>         
         <div class="review-input">
           <form id="review-form">
             <input type="text" class="input reviewer_name" placeholder="Name and Surname" id="reviewer_name"><br>
@@ -271,7 +276,17 @@
             <input class="contact__submit" type="submit" value="Submit" id="review-submit">
           </form>
         </div>
-
+        </div>
+            <!-- This is how the inside of the reviewSection should look -->
+            <!-- <div class="review-box" id="review_box">
+              <p><span class="review-title">Name</span> - date</p>
+            <p class="review-message">Review</p> 
+          </div> -->
+        <div class="reviews" id="reviewSection">
+          <div class="seeAll">
+            <a href="#" onclick="seeAll()">See all reviews</a>
+          </div>
+        </div>
     </section>
 
     <section data-pages class="container contact-page hide-content" id="contact">

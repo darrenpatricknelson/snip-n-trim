@@ -274,62 +274,59 @@ function retrieveReviewerInfos() {
 //  set review
 
 function setReview(data) {
-  data; // {username: "someone", message: "hello there"}
-  let reviewBox = document.getElementById("review_box");
+  data;
 
-  if (reviewBox.innerHTML.trim().length == 0) {
-    createNew(data);
-  } else {
-    createSecondary(data);
-  }
-}
-
-// create functions
-function createNew(data) {
   // create the parent
-  let reviewBox = document.getElementById("review_box");
-  // create child
+  let reviewSection = document.getElementById("reviewSection");
+
+  // create the child
+  let reviewBox = document.createElement("div");
+  reviewBox.classList.add("review-box");
+
+  // create grandchildren
   let textName = document.createElement("p");
+  let textDate = document.createElement("p");
   let textMessage = document.createElement("p");
 
+  // create the values (name, date and message)
+  let date = new Date();
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  date = document.createTextNode(
+    " - " + date.getDate() + " " + months[date.getMonth()]
+  );
   let nameValue = document.createTextNode(data.Username);
   let messsageValue = document.createTextNode(data.message);
 
   // add text to p tag
   textName.appendChild(nameValue);
-  textName.classList.add("name_box");
+  textName.classList.add("review-title");
+  textName.classList.add("inline");
+  textDate.appendChild(date);
+  textDate.classList.add("inline");
   textMessage.appendChild(messsageValue);
-  textMessage.classList.add("review_box");
-  // add child to parent
+  textMessage.classList.add("review-message");
+
+  // add grandchildren to child (name and messages to the review box)
   reviewBox.appendChild(textName);
+  reviewBox.appendChild(textDate);
   reviewBox.appendChild(textMessage);
+  reviewBox.classList.add("inline");
 
-  // console.log("empty");
-  // clear field
-  // value1.innerText = "";
-}
-
-function createSecondary(data) {
-  const reviewContainer = document.getElementById("reviewSection");
-  // create new the parent
-  let newReviewBox = document.createElement("div");
-  newReviewBox.classList.add("review-box");
-  // create child
-  let newText = document.createElement("p");
-  let newMessage = document.createElement("p");
-  let newNameValue = document.createTextNode(data.Username);
-  let newMesssageValue = document.createTextNode(data.message);
-
-  // add text to p tag
-  newText.appendChild(newNameValue);
-  newText.classList.add("name_box");
-  newMessage.appendChild(newMesssageValue);
-  newMessage.classList.add("review_box");
-  // add child to parent
-  newReviewBox.appendChild(newText);
-  newReviewBox.appendChild(newMessage);
-  // console.log("full");
-  reviewContainer.appendChild(newReviewBox);
+  // add child to parent (review box to review section)
+  reviewSection.appendChild(reviewBox);
 }
 
 // review form on the testimonial page
@@ -391,6 +388,8 @@ reviewForm.addEventListener("submit", (e) => {
     }, 3000);
   }
 });
+
+// here
 
 // contact form on the contact page
 
