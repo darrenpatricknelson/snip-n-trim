@@ -292,7 +292,6 @@ a {
 .reviews {
   margin: 5px;
   width: clamp(450px, 100%, 800px);
-  height: 55vh;
   align-items: center;
   overflow-x: hidden;
   overflow-y: scroll;
@@ -966,6 +965,10 @@ a {
   }
 }
 @media (min-width: 1600px) {
+  .reviews {
+    height: 55vh;
+  }
+
   .header {
     height: 10vh;
   }
@@ -987,6 +990,10 @@ a {
 .reviews,
 .review-box {
     min-width: 350px;
+  }
+
+  .reviews {
+    overflow: visible;
   }
 
   .declaration {

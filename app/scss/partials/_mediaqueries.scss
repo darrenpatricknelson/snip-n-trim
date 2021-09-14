@@ -99,11 +99,9 @@
 
 @media (min-width: 1600px) {
   // testimonial page
-  // .reviews {
-  //   padding: 20px;
-  //   overflow-x: hidden;
-  //   overflow-y: scroll;
-  // }
+  .reviews {
+    height: 55vh;
+  }
   .header {
     height: 10vh;
   }
@@ -131,6 +129,10 @@
   .reviews,
   .review-box {
     min-width: 350px;
+  }
+
+  .reviews {
+    overflow: visible;
   }
 
   .declaration {
