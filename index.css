@@ -1002,6 +1002,11 @@ a {
 .reviews,
 .review-box {
     min-width: 350px;
+    margin: 0;
+  }
+
+  .review-input {
+    width: clamp(300px, 100%, 400px);
   }
 
   .reviews {
