@@ -374,9 +374,21 @@ a {
 }
 
 .seeAllReviewsContainer {
-  background-color: red;
   width: 80%;
   height: 80%;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  padding: 20px;
+}
+
+.exitReviews {
+  position: absolute;
+  top: 75px;
+  right: 150px;
+  height: 50px;
+  width: 100%;
+  text-align: right;
 }
 
 .inline {

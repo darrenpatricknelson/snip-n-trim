@@ -52,9 +52,13 @@
       </div>
     </div>
 
-    <!-- Contact page - robot check overlay -->
-    <div class="overlay hide-content" id="seeAllReviews">
-      <div class="seeAllReviewsContainer" id="reviewSectionAll"></div>
+    <!-- Testimonial page - see all reviews overlay -->
+    <div class="overlay hide-content" id="seeAllReviews" onclick="exitSeeAll()">
+        <a href="#" class="exitReviews" id="exitSeeAll" onclick="exitSeeAll()">
+            <p style="color:white">See less reviews <i class="far fa-times-circle"></i></p>
+        </a>
+        <div class="seeAllReviewsContainer" id="reviewSectionAll">
+        </div>
     </div>
 
     <header class="header">
@@ -283,9 +287,10 @@
             <p class="review-message">Review</p> 
           </div> -->
         <div class="reviews" id="reviewSection">
-          <div class="seeAll">
-            <a href="#" onclick="seeAll()" class="seeAllLink">See all reviews</a>
-          </div>
+          
+            <div class="seeAll">
+              <a href="#" onclick="seeAll()" class="seeAllLink">See all reviews</a>
+            </div>
         </div>
     </section>
 

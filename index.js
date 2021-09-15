@@ -389,7 +389,88 @@ reviewForm.addEventListener("submit", (e) => {
   }
 });
 
-// here
+// create a reference to reviewer info
+let reviewerInfoAll = firebase.database().ref("reviewerInfo");
+
+// fetching latest objects
+reviewerInfoAll.orderByKey().once("value", appendInitialReviewsAll);
+
+async function appendInitialReviewsAll(snapshot) {
+  var dataAll = await snapshot.toJSON();
+  var keys = Object.keys(dataAll);
+
+  keys.forEach((key) => {
+    seeAll(dataAll[key]);
+  });
+}
+
+// function to show all reviews
+
+function seeAll(dataAll) {
+  console.log("yebo!");
+  let reviewSection = document.getElementById("seeAllReviews");
+  reviewSection.classList.remove("hide-content");
+
+  dataAll;
+
+  // create the parent
+  let reviewSectionAll = document.getElementById("reviewSectionAll");
+
+  // create the child
+  let reviewBox = document.createElement("div");
+  reviewBox.classList.add("review-box");
+
+  // create grandchildren
+  let textName = document.createElement("p");
+  let textDate = document.createElement("p");
+  let textMessage = document.createElement("p");
+
+  // create the values (name, date and message)
+  let date = new Date();
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  date = document.createTextNode(
+    " - " + date.getDate() + " " + months[date.getMonth()]
+  );
+  let nameValue = document.createTextNode(dataAll.Username);
+  let messsageValue = document.createTextNode(dataAll.message);
+
+  // add text to p tag
+  textName.appendChild(nameValue);
+  textName.classList.add("review-title");
+  textName.classList.add("inline");
+  textDate.appendChild(date);
+  textDate.classList.add("inline");
+  textMessage.appendChild(messsageValue);
+  textMessage.classList.add("review-message");
+
+  // add grandchildren to child (name and messages to the review box)
+  reviewBox.appendChild(textName);
+  reviewBox.appendChild(textDate);
+  reviewBox.appendChild(textMessage);
+  reviewBox.classList.add("inline");
+
+  // add child to parent (review box to review section)
+  reviewSectionAll.appendChild(reviewBox);
+}
+
+// exit the field
+function exitSeeAll() {
+  let reviewSection = document.getElementById("seeAllReviews");
+  reviewSection.classList.add("hide-content");
+}
 
 // contact form on the contact page
 
