@@ -406,11 +406,13 @@ async function appendInitialReviewsAll(snapshot) {
 
 // function to show all reviews
 
-function seeAll(dataAll) {
-  console.log("yebo!");
+function seeAllReviews() {
   let reviewSection = document.getElementById("seeAllReviews");
   reviewSection.classList.remove("hide-content");
+}
 
+function seeAll(dataAll) {
+  // console.log("yebo!");
   dataAll;
 
   // create the parent
