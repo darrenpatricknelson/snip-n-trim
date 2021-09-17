@@ -4,6 +4,7 @@
   padding: 20px 30px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .declaration {
@@ -23,8 +24,6 @@
   // padding: 0 30px 20px;
   width: clamp(450px, 100%, 800px);
   align-items: center;
-  overflow-x: hidden;
-  overflow-y: scroll;
   justify-content: center;
   position: relative;
   /* delete the following */
@@ -32,12 +31,18 @@
   // background-color: red;
 }
 
+.reviewSection {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-bottom: 20px;
+}
+
 .review-box {
   padding: 10px;
   display: flex;
   flex-direction: column;
   // width: clamp(350px, 100%, 650px);
-  width: clamp(350px, 100%, 100%);
+  width: clamp(300px, 100%, 100%);
   margin: 0 10px;
   line-height: 1.5;
   border-bottom: 5px solid lightgrey;
@@ -104,36 +109,37 @@
   display: flex;
   align-items: center;
   justify-content: end;
-  // border: 1px solid;
-}
-
-.seeAllLink {
   padding: 20px;
+  // border: 1px solid;
 }
 
 // see all the reviews overlay
 
-// #seeAllReviews {
-//   display: flex;
-//   flex-direction: column;
-// }
+.seeAllReviews {
+  display: flex;
+  flex-direction: column;
+}
 
-.seeAllReviewsContainer {
+.seeAllContainer {
   // background-color: red;
-  width: 80%;
-  height: 80%;
-  position: relative;
-  overflow-x: hidden;
-  overflow-y: scroll;
+  // position: relative;
   padding: 20px;
 }
 
+.seeAllReviewsContainer {
+  width: 80%;
+  height: 80%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
 .exitReviews {
-  position: absolute;
-  top: 75px;
-  right: 150px;
+  // position: absolute;
+  // top: 75px;
+  // right: 150px;
   height: 50px;
-  width: 100%;
+  width: 80%;
+  // border: 1px solid;
   text-align: right;
 }
 

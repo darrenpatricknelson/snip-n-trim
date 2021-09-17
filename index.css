@@ -280,6 +280,7 @@ a {
   padding: 20px 30px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .declaration {
@@ -293,18 +294,22 @@ a {
   margin: 5px;
   width: clamp(450px, 100%, 800px);
   align-items: center;
-  overflow-x: hidden;
-  overflow-y: scroll;
   justify-content: center;
   position: relative;
   /* delete the following */
+}
+
+.reviewSection {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  margin-bottom: 20px;
 }
 
 .review-box {
   padding: 10px;
   display: flex;
   flex-direction: column;
-  width: clamp(350px, 100%, 100%);
+  width: clamp(300px, 100%, 100%);
   margin: 0 10px;
   line-height: 1.5;
   border-bottom: 5px solid lightgrey;
@@ -367,27 +372,28 @@ a {
   display: flex;
   align-items: center;
   justify-content: end;
+  padding: 20px;
 }
 
-.seeAllLink {
+.seeAllReviews {
+  display: flex;
+  flex-direction: column;
+}
+
+.seeAllContainer {
   padding: 20px;
 }
 
 .seeAllReviewsContainer {
   width: 80%;
   height: 80%;
-  position: relative;
   overflow-x: hidden;
   overflow-y: scroll;
-  padding: 20px;
 }
 
 .exitReviews {
-  position: absolute;
-  top: 75px;
-  right: 150px;
   height: 50px;
-  width: 100%;
+  width: 80%;
   text-align: right;
 }
 
@@ -976,9 +982,9 @@ a {
     width: 100%;
   }
 }
-@media (min-width: 1600px) {
-  .reviews {
-    height: 55vh;
+@media (min-width: 1500px) {
+  .reviewSection {
+    height: 50vh;
   }
 
   .header {
@@ -1015,6 +1021,26 @@ a {
 
   .declaration {
     line-height: 2;
+    width: 80%;
+  }
+
+  .reviews {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .seeAllReviews {
+    padding: 20px;
+  }
+
+  .exitReviews {
+    top: 50px;
+    right: auto;
+  }
+
+  .seeAllReviewsContainer {
+    width: 90%;
   }
 
   .project-ls,
@@ -1031,19 +1057,5 @@ a {
   .project-images {
     width: 100%;
     height: 100%;
-  }
-
-  .testimonials-page {
-    flex-wrap: wrap;
-  }
-
-  .declaration {
-    width: 100%;
-  }
-
-  .reviews {
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
   }
 }

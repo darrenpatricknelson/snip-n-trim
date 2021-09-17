@@ -95,12 +95,12 @@
   }
 }
 
-// full page
+// full screen view
 
-@media (min-width: 1600px) {
+@media (min-width: 1500px) {
   // testimonial page
-  .reviews {
-    height: 55vh;
+  .reviewSection {
+    height: 50vh;
   }
   .header {
     height: 10vh;
@@ -119,7 +119,13 @@
   }
 }
 
-// Phone setup
+// Tablet screen view
+
+@media (min-width: 750px) {
+  // Testimonial page
+}
+
+// Phone screen view
 
 @media (max-width: 750px) {
   // others
@@ -142,6 +148,30 @@
 
   .declaration {
     line-height: 2;
+    width: 80%;
+  }
+
+  .reviews {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  //  testimonial overlay
+
+  .seeAllReviews {
+    padding: 20px;
+  }
+  .exitReviews {
+    // margin-bottom: 50px;
+    // z-index: 1;
+    // border: 1px solid;
+    top: 50px;
+    right: auto;
+  }
+
+  .seeAllReviewsContainer {
+    width: 90%;
   }
   // portfolio page
   .project-ls,
@@ -160,15 +190,4 @@
   }
 
   // testimonial page
-  .testimonials-page {
-    flex-wrap: wrap;
-  }
-  .declaration {
-    width: 100%;
-  }
-  .reviews {
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-  }
 }
